@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fbfbfa;
+  --foreground: #1a2e22;
+  --card: #ffffff;
+  --card-foreground: #1a2e22;
+  --primary: #1b6e47;
+  --primary-foreground: #ffffff;
+  --primary-hover: #145938;
+  --secondary: #edf5ef;
+  --secondary-foreground: #1b6e47;
+  --muted: #f1f4f2;
+  --muted-foreground: #5a7063;
+  --accent: #d97706;
+  --accent-foreground: #ffffff;
+  --border: #e2e8e4;
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
+
+/* Number alignment for financial tables & tickers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+/* Leaflet map fix on mobile */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 10 !important;
+  border-radius: var(--radius);
+}
